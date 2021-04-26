@@ -17,6 +17,13 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def show
+    # binding.pry
+     @prototype = Prototype.find(params[:id])
+     @comment = Comment.new
+    #  @comments = @prototype.comments.includes(:user)
+  end
+
   private
 
   def prototype_params
