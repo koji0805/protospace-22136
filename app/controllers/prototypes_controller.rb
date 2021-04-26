@@ -1,5 +1,4 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, except: [:index, :new, :create]
   
   def index
     @prototypes = Prototype.includes(:user)
@@ -23,5 +22,4 @@ class PrototypesController < ApplicationController
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
   end
-
 end
